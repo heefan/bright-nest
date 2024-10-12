@@ -1,3 +1,120 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+    "extends": [
+        "next/core-web-vitals",
+        "prettier",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:sonar/base",
+        "plugin:sonar/recommended"
+    ],
+    "plugins": [
+        "promise",
+        "@typescript-eslint",
+        "unused-imports",
+        "unicorn",
+        "sonar"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "project": "./tsconfig.json"
+    },
+    "ignorePatterns": [
+        "next.config.js"
+    ],
+    "rules": {
+        "sonar/switch-without-default": "error",
+        "no-empty-function": [
+            "error",
+            {
+                "allow": [
+                    "arrowFunctions",
+                    "constructors"
+                ]
+            }
+        ],
+        "@typescript-eslint/naming-convention": [
+            "warn",
+            {
+                "selector": "class",
+                "format": [
+                    "PascalCase"
+                ]
+            },
+            {
+                "selector": "interface",
+                "format": [
+                    "PascalCase"
+                ]
+            },
+            {
+                "selector": "typeAlias",
+                "format": [
+                    "PascalCase"
+                ]
+            },
+            {
+                "selector": "function",
+                "format": [
+                    "camelCase",
+                    "PascalCase"
+                ],
+                "leadingUnderscore": "allow"
+            },
+            {
+                "selector": "typeLike",
+                "format": [
+                    "PascalCase"
+                ]
+            },
+            {
+                "selector": "function",
+                "modifiers": [
+                    "exported"
+                ],
+                "format": [
+                    "PascalCase",
+                    "camelCase"
+                ],
+                "filter": {
+                    "regex": "^(use[A-Z]|App)$",
+                    "match": false
+                }
+            }
+        ],
+        "react/no-unstable-nested-components": "warn",
+        "no-nested-ternary": "warn",
+        "@typescript-eslint/no-unnecessary-type-assertion": "error",
+        "unicorn/no-useless-undefined": "error",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "@typescript-eslint/ban-ts-comment": "warn",
+        "@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "unused-imports/no-unused-imports": "error",
+        "no-duplicate-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "^_",
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        "promise/always-return": "error",
+        "promise/no-return-wrap": "error",
+        "promise/param-names": "warn",
+        "promise/catch-or-return": "error",
+        "promise/no-native": "off",
+        "promise/no-nesting": "warn",
+        "promise/no-promise-in-callback": "warn",
+        "promise/no-callback-in-promise": "warn",
+        "promise/avoid-new": "warn",
+        "promise/no-new-statics": "error",
+        "promise/no-return-in-finally": "warn",
+        "promise/valid-params": "warn"
+    }
 }
