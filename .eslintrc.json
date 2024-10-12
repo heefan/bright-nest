@@ -1,18 +1,6 @@
 {
-    "extends": [
-        "next/core-web-vitals",
-        "prettier",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:sonar/base",
-        "plugin:sonar/recommended"
-    ],
-    "plugins": [
-        "promise",
-        "@typescript-eslint",
-        "unused-imports",
-        "unicorn",
-        "sonar"
-    ],
+    "extends": ["next/core-web-vitals", "prettier", "plugin:@typescript-eslint/recommended"],
+    "plugins": ["promise", "@typescript-eslint", "unused-imports", "unicorn"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": 2020,
@@ -22,63 +10,41 @@
         },
         "project": "./tsconfig.json"
     },
-    "ignorePatterns": [
-        "next.config.js"
-    ],
+    "ignorePatterns": ["next.config.js"],
     "rules": {
-        "sonar/switch-without-default": "error",
         "no-empty-function": [
             "error",
             {
-                "allow": [
-                    "arrowFunctions",
-                    "constructors"
-                ]
+                "allow": ["arrowFunctions", "constructors"]
             }
         ],
         "@typescript-eslint/naming-convention": [
             "warn",
             {
                 "selector": "class",
-                "format": [
-                    "PascalCase"
-                ]
+                "format": ["PascalCase"]
             },
             {
                 "selector": "interface",
-                "format": [
-                    "PascalCase"
-                ]
+                "format": ["PascalCase"]
             },
             {
                 "selector": "typeAlias",
-                "format": [
-                    "PascalCase"
-                ]
+                "format": ["PascalCase"]
             },
             {
                 "selector": "function",
-                "format": [
-                    "camelCase",
-                    "PascalCase"
-                ],
+                "format": ["camelCase", "PascalCase"],
                 "leadingUnderscore": "allow"
             },
             {
                 "selector": "typeLike",
-                "format": [
-                    "PascalCase"
-                ]
+                "format": ["PascalCase"]
             },
             {
                 "selector": "function",
-                "modifiers": [
-                    "exported"
-                ],
-                "format": [
-                    "PascalCase",
-                    "camelCase"
-                ],
+                "modifiers": ["exported"],
+                "format": ["PascalCase", "camelCase"],
                 "filter": {
                     "regex": "^(use[A-Z]|App)$",
                     "match": false
