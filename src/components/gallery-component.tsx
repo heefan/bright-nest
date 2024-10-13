@@ -25,8 +25,10 @@ To read more about using these font, please visit the Next.js documentation:
 **/
 
 import Image from 'next/image'
+import Link from 'next/link'
 
 export function GalleryComponent() {
+
   return (
     <div className="w-full">
       <section className="py-12 md:py-16 lg:py-20">
@@ -38,7 +40,8 @@ export function GalleryComponent() {
         <div className="container mx-auto px-4">
           <h2 className="mb-8 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Nature</h2>
           <div className="flex flex-wrap justify-center gap-6">
-            <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
+            <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg cursor-pointer">
+              <Link href='/dashboard'>
               <Image
                 src="/book0-thumbnail.png"
                 alt="Nature Image 1"
@@ -46,7 +49,8 @@ export function GalleryComponent() {
                 height="240"
                 className="h-60 w-full object-cover transition-transform duration-300 group-hover:scale-105"
                 style={{ aspectRatio: "320/240", objectFit: "cover" }}
-              />
+                />
+              </Link>
               <div className="p-4">
                 <h3 className="text-lg font-semibold">Friends</h3>
                 <p className="text-gray-500 dark:text-gray-400">
