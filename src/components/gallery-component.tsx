@@ -40,7 +40,7 @@ export function GalleryComponent() {
           <div className="flex flex-wrap justify-center gap-6">
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book0-thumbview.png"
+                src="/book0-thumbnail.png"
                 alt="Nature Image 1"
                 width="320"
                 height="240"
@@ -56,7 +56,7 @@ export function GalleryComponent() {
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book1-thumbview.png"
+                src="/book1-thumbnail.png"
                 alt="Nature Image 2"
                 width="320"
                 height="240"
@@ -70,7 +70,7 @@ export function GalleryComponent() {
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book2-thumbview.png"
+                src="/book2-thumbnail.png"
                 alt="Nature Image 3"
                 width="320"
                 height="240"
@@ -84,7 +84,7 @@ export function GalleryComponent() {
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book3-thumbview.png"
+                src="/book3-thumbnail.png"
                 alt="Nature Image 4"
                 width="320"
                 height="240"
@@ -105,7 +105,7 @@ export function GalleryComponent() {
           <div className="flex flex-wrap justify-center gap-6">
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book4-thumbview.png"
+                src="/book4-thumbnail.png"
                 alt="Architecture Image 1"
                 width="320"
                 height="240"
@@ -119,7 +119,7 @@ export function GalleryComponent() {
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book5-thumbview.png"
+                src="/book5-thumbnail.png"
                 alt="Architecture Image 2"
                 width="320"
                 height="240"
@@ -133,7 +133,7 @@ export function GalleryComponent() {
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book6-thumbview.png"
+                src="/book6-thumbnail.png"
                 alt="Architecture Image 3"
                 width="320"
                 height="240"
@@ -147,7 +147,7 @@ export function GalleryComponent() {
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book7-thumbview.png"
+                src="/book7-thumbnail.png"
                 alt="Architecture Image 4"
                 width="320"
                 height="240"
@@ -168,7 +168,7 @@ export function GalleryComponent() {
           <div className="flex flex-wrap justify-center gap-6">
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book8-thumbview.png"
+                src="/book8-thumbnail.png"
                 alt="Cityscape Image 1"
                 width="320"
                 height="240"
@@ -182,7 +182,7 @@ export function GalleryComponent() {
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book9-thumbview.png"
+                src="/book9-thumbnail.png"
                 alt="Cityscape Image 2"
                 width="320"
                 height="240"
@@ -196,7 +196,7 @@ export function GalleryComponent() {
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book10-thumbview.png"
+                src="/book10-thumbnail.png"
                 alt="Cityscape Image 3"
                 width="320"
                 height="240"
@@ -210,7 +210,7 @@ export function GalleryComponent() {
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book11-thumbview.png"
+                src="/book11-thumbnail.png"
                 alt="Cityscape Image 4"
                 width="320"
                 height="240"
@@ -224,7 +224,7 @@ export function GalleryComponent() {
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
               <Image
-                src="/book12-thumbview.png"
+                src="/book12-thumbnail.png"
                 alt="Cityscape Image 5"
                 width="320"
                 height="240"
