@@ -23,6 +23,9 @@ To read more about using these font, please visit the Next.js documentation:
 - App Directory: https://nextjs.org/docs/app/building-your-application/optimizing/fonts
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
+
+import Image from 'next/image'
+
 export function GalleryComponent() {
   return (
     <div className="w-full">
@@ -36,7 +39,7 @@ export function GalleryComponent() {
           <h2 className="mb-8 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Nature</h2>
           <div className="flex flex-wrap justify-center gap-6">
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Nature Image 1"
                 width="320"
@@ -52,7 +55,7 @@ export function GalleryComponent() {
               </div>
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Nature Image 2"
                 width="320"
@@ -66,7 +69,7 @@ export function GalleryComponent() {
               </div>
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Nature Image 3"
                 width="320"
@@ -80,7 +83,7 @@ export function GalleryComponent() {
               </div>
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Nature Image 4"
                 width="320"
@@ -101,7 +104,7 @@ export function GalleryComponent() {
           <h2 className="mb-8 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Architecture</h2>
           <div className="flex flex-wrap justify-center gap-6">
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Architecture Image 1"
                 width="320"
@@ -115,7 +118,7 @@ export function GalleryComponent() {
               </div>
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Architecture Image 2"
                 width="320"
@@ -129,7 +132,7 @@ export function GalleryComponent() {
               </div>
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Architecture Image 3"
                 width="320"
@@ -143,7 +146,7 @@ export function GalleryComponent() {
               </div>
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Architecture Image 4"
                 width="320"
@@ -164,7 +167,7 @@ export function GalleryComponent() {
           <h2 className="mb-8 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Cityscape</h2>
           <div className="flex flex-wrap justify-center gap-6">
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Cityscape Image 1"
                 width="320"
@@ -178,7 +181,7 @@ export function GalleryComponent() {
               </div>
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Cityscape Image 2"
                 width="320"
@@ -192,7 +195,7 @@ export function GalleryComponent() {
               </div>
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Cityscape Image 3"
                 width="320"
@@ -206,7 +209,7 @@ export function GalleryComponent() {
               </div>
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Cityscape Image 4"
                 width="320"
@@ -220,7 +223,7 @@ export function GalleryComponent() {
               </div>
             </div>
             <div className="group min-w-[280px] max-w-[320px] overflow-hidden rounded-lg">
-              <img
+              <Image
                 src="/placeholder.svg"
                 alt="Cityscape Image 5"
                 width="320"
