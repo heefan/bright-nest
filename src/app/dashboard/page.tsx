@@ -1,14 +1,26 @@
 'use client'
 
-import { useEffect, useRef } from "react"
+import { RealtimeClient } from "@openai/realtime-api-beta"
+import { useCallback, useEffect, useRef } from "react"
 import { WavRecorder, WavStreamPlayer } from "../lib/wavtools/index.js"
 import { WavRenderer } from "../utils/wav_renderer"
 
 export default function Page() {
 
-
+    //render when user's voice 
     const clientCanvasRef = useRef<HTMLCanvasElement>(null)
+    //render when system's voice 
     const serverCanvasRef = useRef<HTMLCanvasElement>(null)
+
+    const apiKey = ""
+    const clientRef = useRef<RealtimeClient>(
+        new RealtimeClient({
+            {
+                apiKey: apiKey,
+                dangerouslyAllowAPIKeyInBrowser: true
+            }
+        )
+    )
 
     const wavRecorderRef = useRef<WavRecorder>(
         new WavRecorder({ sampleRate: 24000 })
@@ -44,6 +56,12 @@ export default function Page() {
         }
     }, [])
 
+
+    const connectConversation = useCallback(async () => {
+        const client = clientRef.current
+
+
+    }, [])
 
     return (
         <div><canvas ref={clientCanvasRef}></canvas></div>
