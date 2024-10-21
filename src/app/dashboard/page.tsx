@@ -1,9 +1,13 @@
 'use client'
 
+import { Button } from "@/components/ui/button"
 import { RealtimeClient } from "@openai/realtime-api-beta"
-import { useCallback, useEffect, useRef } from "react"
+import { ItemType } from "@openai/realtime-api-beta/dist/lib/client.js"
+import { X, Zap } from "lucide-react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { WavRecorder, WavStreamPlayer } from "../lib/wavtools/index.js"
 import { WavRenderer } from "../utils/wav_renderer"
+import { RealtimeEvent } from "./type.js"
 
 export default function Page() {
 
@@ -12,15 +16,17 @@ export default function Page() {
     //render when system's voice 
     const serverCanvasRef = useRef<HTMLCanvasElement>(null)
 
-    const apiKey = ""
+    const apiKey: string = process.env.NEXT_PUBLIC_OPENAI_API_KEY || ''
     const clientRef = useRef<RealtimeClient>(
-        new RealtimeClient({
+        new RealtimeClient(
             {
                 apiKey: apiKey,
                 dangerouslyAllowAPIKeyInBrowser: true
             }
         )
     )
+
+    const startTimeRef = useRef<string>(new Date().toISOString())
 
     const wavRecorderRef = useRef<WavRecorder>(
         new WavRecorder({ sampleRate: 24000 })
@@ -29,6 +35,10 @@ export default function Page() {
     const wavStreamPlayerRef = useRef<WavStreamPlayer>(
         new WavStreamPlayer({ sampleRate: 24000 })
     )
+
+    const [isConnected, setIsConnected] = useState(false)
+    const [items, setItems] = useState<ItemType[]>([])
+    const [realtimeEvents, setRealtimeEvents] = useState<RealtimeEvent[]>([])
 
     useEffect(() => {
         const clientCanvas = clientCanvasRef.current
@@ -59,13 +69,57 @@ export default function Page() {
 
     const connectConversation = useCallback(async () => {
         const client = clientRef.current
+        const wavRecorder = wavRecorderRef.current
+        const wavStreamPlayer = wavStreamPlayerRef.current
 
+        // set state variables
+        startTimeRef.current = new Date().toISOString()
+        setIsConnected(true)
+        setRealtimeEvents([])
+        setItems(client.conversation.getItems())
+
+        // connect to microphone
+        await wavRecorder.begin()
+
+        // connect to audio output 
+        await wavStreamPlayer.connect()
+
+        // connect to realtime Api
+        await client.connect()
+
+        client.sendUserMessageContent(
+            [{
+                type: `input_text`,
+                text: `hello!`
+            }]
+        )
+
+        if (client.getTurnDetectionType() === 'server_vad') {
+            await wavRecorder.record((data) => client.appendInputAudio(data.mono))
+        }
 
     }, [])
 
     return (
-        <div><canvas ref={clientCanvasRef}></canvas></div>
+        <div>
+            <canvas ref={clientCanvasRef}></canvas>
+            <Button
 
+                variant={isConnected ? 'destructive' : 'default'}
+                onClick={connectConversation}>
+                {isConnected ? (
+                    <>
+                        disconnect
+                        <X className="ml-2 h-4 w-4" />
+                    </>
+                ) : (
+                    <>
+                        <Zap className="mr-2 h-4 w-4" />
+                        connect
+                    </>
+                )}
 
+            </Button>
+        </div>
     )
 }
