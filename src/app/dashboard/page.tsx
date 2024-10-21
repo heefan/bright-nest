@@ -68,6 +68,7 @@ export default function Page() {
 
 
     const connectConversation = useCallback(async () => {
+
         const client = clientRef.current
         const wavRecorder = wavRecorderRef.current
         const wavStreamPlayer = wavStreamPlayerRef.current
@@ -100,13 +101,29 @@ export default function Page() {
 
     }, [])
 
+
+    const disconnectConversation = useCallback(async () => {
+        setIsConnected(false)
+        setRealtimeEvents([])
+        setItems([])
+
+        const client = clientRef.current
+        client.disconnect()
+
+        const wavRecorder = wavRecorderRef.current
+        await wavRecorder.end()
+
+        const wavStreamPlayer = wavStreamPlayerRef.current
+        await wavStreamPlayer.interrupt()
+    }, [])
+
     return (
         <div>
             <canvas ref={clientCanvasRef}></canvas>
             <Button
 
                 variant={isConnected ? 'destructive' : 'default'}
-                onClick={connectConversation}>
+                onClick={isConnected ? disconnectConversation : connectConversation}>
                 {isConnected ? (
                     <>
                         disconnect
