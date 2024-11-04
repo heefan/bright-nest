@@ -24,6 +24,9 @@
             "@components/*": [
                 "./src/app/components/*"
             ],
+            "@define/*": [
+                "./src/app/define/*"
+            ],
             "@lib/wavtools/*": [
                 "./src/app/lib/wavtools/dist/*"
             ],

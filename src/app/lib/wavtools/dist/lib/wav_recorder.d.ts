@@ -41,7 +41,7 @@ export class WavRecorder {
     node: any;
     recording: boolean;
     _lastEventId: number;
-    eventReceipts: {};
+    eventReceipts: object;
     eventTimeout: number;
     _chunkProcessor: () => void;
     _chunkProcessorBuffer: {

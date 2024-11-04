@@ -119,12 +119,21 @@ export class AudioAnalysis {
       const durationInSeconds = length / sampleRate;
       const analyze = (index) => {
         const suspendTime = renderQuantumInSeconds * index;
+        // if (suspendTime < durationInSeconds) {
+        //   offlineAudioContext.suspend(suspendTime).then(() => {
+        //     const fftResult = new Float32Array(analyser.frequencyBinCount);
+        //     analyser.getFloatFrequencyData(fftResult);
+        //     this.fftResults.push(fftResult);
+        //     analyze(index + 1);
+        //   });
         if (suspendTime < durationInSeconds) {
           offlineAudioContext.suspend(suspendTime).then(() => {
             const fftResult = new Float32Array(analyser.frequencyBinCount);
             analyser.getFloatFrequencyData(fftResult);
-            this.fftResults.push(fftResult);
-            analyze(index + 1);
+            return fftResult; // Return the fftResult to satisfy the promise chain
+          }).catch((error) => {
+            console.error('Error during audio analysis suspension:', error);
+            throw error; // Re-throw the error to propagate it
           });
         }
         if (index === 1) {

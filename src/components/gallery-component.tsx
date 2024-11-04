@@ -1,9 +1,9 @@
-import { Item } from '@/app/define/Item.interface';
+import { BookItem } from "@define/book-item.interface";
 import Image from 'next/image';
 import Link from 'next/link';
 
 
-export function GalleryComponent({ item }: { item: Item }) {
+export function GalleryComponent({ item }: { item: BookItem }) {
 
   return (
     <div className="w-full">

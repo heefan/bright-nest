@@ -1,12 +1,11 @@
-
 'use client'
 
 import { GalleryComponent } from "@/components/gallery-component"
-import { Item } from "./define/Item.interface"
+import { BookItem } from "@define/book-item.interface"
 
 export default function Home() {
 
-    const item: Item = {
+    const item: BookItem = {
         id: '01'
     }
     return (
