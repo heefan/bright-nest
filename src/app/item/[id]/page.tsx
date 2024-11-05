@@ -1,14 +1,13 @@
 'use client'
 
 import { useParams } from 'next/navigation';
+import Flipbook from '../MyBook';
 const ItemPage = () => {
     const { id } = useParams();
 
     return (
-        <div>
-            <h1>Item Details</h1>
-            <p>Item ID: {id}</p>
-            {/* Add more details or fetch data based on the ID */}
+        <div className='min-h-screen flex items-center justify-center flex-col gap-y-10'>
+            <Flipbook />
         </div>
     );
 };

@@ -1,5 +1,5 @@
 {
-  "name": "webclient",
+  "name": "brightnest",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "start": "next start",
-    "prepare": "husky"
+    "prepare": "husky && husky install"
   },
   "dependencies": {
     "@openai/realtime-api-beta": "github:openai/openai-realtime-api-beta",
@@ -38,7 +38,7 @@
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-unicorn": "^56.0.0",
     "eslint-plugin-unused-imports": "^4.1.4",
-    "husky": "^9.1.6",
+    "husky": "^8.0.0",
     "lint-staged": "^15.2.10",
     "postcss": "^8",
     "prettier": "^3.3.3",
